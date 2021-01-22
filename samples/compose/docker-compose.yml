@@ -1,0 +1,6 @@
+version: '3.8' # compose file version
+services:
+ dhavalapp1: #to define info about containers
+  image: alpine
+  container_name: dhavalcon1
+  command: ping google.com

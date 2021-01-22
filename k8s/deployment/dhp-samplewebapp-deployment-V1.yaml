@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dhp-samplewebapp
+  name: dhp-samplewebapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dhp-samplewebapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dhp-samplewebapp
+    spec:
+      containers:
+      - image: dhp6106/htmlapp:v2
+        name: samplewebapp
+        resources: {}
+status: {}

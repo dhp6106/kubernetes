@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+ ashuwebuiapp1:
+  image: portainer/portainer
+  container_name: dhavalwebui
+  ports:  # is an array object 
+   - "2133:9000"
+  volumes:
+   - "/var/run/docker.sock:/var/run/docker.sock"

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashudep2 
+  name: ashudep2  # name of deployment 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashudep2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashudep2
+    spec:
+      imagePullSecrets:  
+      - name: ashusec1  # name of secret
+      containers:
+      - image: ashutoshhoracle.azurecr.io/alpine:v1 # docker image on ACR 
+        name: alpine
+        command: ["/bin/sh","-c","ping 8.8.8.8"] # parent process for POD -replace entrypoint
+        resources: {}
+status: {}

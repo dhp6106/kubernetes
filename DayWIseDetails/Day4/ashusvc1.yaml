@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service  # api resource 
+metadata:
+  creationTimestamp: null
+  labels:  # label of service 
+    app: ashusvc1
+  name: ashusvc1 # name of service 
+spec:
+  ports:
+  - name: 1234-80
+    port: 1234   #  port of service 
+    protocol: TCP
+    targetPort: 8080  # pod app port 
+    nodePort: 32376  # must be in the range of 30000-32767 #optional 
+  selector:  # this is the finder / search 
+    x: helloashurcc # exactly same label of POD 
+  type: NodePort # type of Service 
+status:
+  loadBalancer: {} # inbuild loadbalancer capability 

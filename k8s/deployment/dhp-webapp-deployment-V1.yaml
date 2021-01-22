@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dhp-webapp
+  name: dhp-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dhp-webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dhp-webapp
+    spec:
+      containers:
+      - image: dockerashu/jan2021:webv1
+        name: jan2021
+        resources: {}
+status: {}

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dhpdep2
+  name: dhpdep2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dhpdep2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dhpdep2
+    spec:
+      imagePullSecrets:
+      - name: dhpsecret1
+      containers:
+      - image: ashutoshhoracle.azurecr.io/alpine:v1
+        name: alpine
+        command: ["/bin/sh", "-c", "ping 8.8.8.8"]
+        resources: {}
+status: {}

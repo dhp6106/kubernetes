@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: dhp-rc-1
+  labels:
+    x: dhprc-1
+spec:
+  replicas: 1
+  template:
+    metadata:
+     labels:
+       x: dhppod-1  # label of POD -- so that service can find it
+    spec:
+     containers:
+     - image: dockerashu/ashujsp:v1
+       name: dhavaluc1
+       ports:
+       - containerPort: 8080

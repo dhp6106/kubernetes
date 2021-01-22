@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: dhavalpod1
+spec:
+ containers:
+   - image: nginx
+     name: dhvalcon1
+     ports:
+       - containerPort: 80

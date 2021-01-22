@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+ dhavaljavaapp:
+  image: dockerashu/ashujsp:v1
+  container_name: dhavalwebapp1
+  ports:
+   - "2121:8080"

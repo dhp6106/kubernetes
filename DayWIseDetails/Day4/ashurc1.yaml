@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+ name: ashu-rc-1
+ labels:  # label of RC 
+  x: helloashurc
+spec:
+ replicas: 3 #  need one Pod
+ template: # use this template to create no of pod replica
+  metadata:
+   labels:
+    x: helloashurcc  # label of all the POD created by RC 
+  spec:
+   containers:
+   - image: dockerashu/ashujsp:v1  # tomcat web server image 
+     name: ashuc1 
+     ports:
+     - containerPort: 8080 # application port

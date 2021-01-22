@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+ dhavalsvc11:
+  image: newimgashu:v2
+  build: 
+   context: .  # location of dockerfile 
+   dockerfile: myhttpd.dockerfile  # name of dockerfile 
+  container_name: dhavalhttpdc
+  ports:
+   - "2150:80"

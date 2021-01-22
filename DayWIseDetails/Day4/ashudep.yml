@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashu-depweb
+  name: ashu-depweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashu-depweb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashu-depweb
+    spec:
+      containers:
+      - image: dockerashu/jan2021:webv1
+        name: jan2021
+        resources: {}
+status: {}

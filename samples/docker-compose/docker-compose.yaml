@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+ dhavalapp1:
+  image: alpine
+  container_name: dhpcon1
+  command: ping fb.com
+ dhavalapp2:
+  image: alpine
+  container_name: dhpcon2
+  command: ping goolge.com

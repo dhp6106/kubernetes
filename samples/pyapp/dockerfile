@@ -1,0 +1,13 @@
+FROM python
+#docker engine will receive signal to pull python based docker image from docker Hub
+
+MAINTAINER dhaval.parikh@oracle.com
+#info about creator of the image
+
+RUN mkdir /code
+#create /code on the container
+COPY hello.py /code/hello.py
+#copy hello.py from local system (client) to /code in container that gets created from the image.
+
+CMD ["python", "/code/hello.py"]
+#CMD is to run the hello.py on the container as default parent process for my image
